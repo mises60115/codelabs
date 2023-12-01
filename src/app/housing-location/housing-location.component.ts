@@ -9,10 +9,10 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
     <section class="listing">
-      <img class="listing-photo" [src]="locFromHousingLocCmpnt.photo" alt="Exterior photo of {{ locFromHousingLocCmpnt.name }}">
-      <h2 class="listing-heading">{{ locFromHousingLocCmpnt.name }}</h2>
-      <p class="listing-location">{{ locFromHousingLocCmpnt.city }}, {{ locFromHousingLocCmpnt.state }}</p>
-      <a [routerLink]="['/details', locFromHousingLocCmpnt.id]">Learn More</a>
+      <img class="listing-photo" [src]="locationOfHousingLocCmpnt.photo" alt="Exterior photo of {{ locationOfHousingLocCmpnt.name }}">
+      <h2 class="listing-heading">{{ locationOfHousingLocCmpnt.name }}</h2>
+      <p class="listing-location">{{ locationOfHousingLocCmpnt.city }}, {{ locationOfHousingLocCmpnt.state }}</p>
+      <a [routerLink]="['/details', locationOfHousingLocCmpnt.id]">Learn More</a>
     </section>
   `,
   styleUrls: ['./housing-location.component.css']
@@ -20,5 +20,5 @@ import { RouterModule } from '@angular/router';
 export class HousingLocationComponent {
   /* ! estimation point or non-null assertion operator
   tells typescript the property will not be undefined */
-  @Input() locFromHousingLocCmpnt!: HousingLocation;
+  @Input() locationOfHousingLocCmpnt!: HousingLocation;
 }
