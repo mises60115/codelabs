@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HousingLocation } from './housinglocation';
+import { last } from 'rxjs';
 
 @Injectable({
   // root means the service can be used throughout the app
   providedIn: 'root'
 })
 export class HousingService {
+
   protected locListFromHousingSvc: HousingLocation[] = [
     {
       id: 0,
@@ -117,5 +119,9 @@ export class HousingService {
 
   getHousingLocationById(id: Number): HousingLocation | undefined {
     return this.locListFromHousingSvc.find(housingLoc => housingLoc.id === id);
+  }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(firstName, lastName, email);
   }
 }
